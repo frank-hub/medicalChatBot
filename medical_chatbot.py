@@ -12,7 +12,8 @@ def ask_openai(prompt):
         messages=[
             {"role": "system", "content": "You are a helpful and knowledgeable medical assistant. Only answer health-related questions. If a question is not about medicine or health, politely refuse."},
             {"role": "user", "content": user_input}
-        ]        max_tokens=300,
+        ],        
+        max_tokens=300,
         temperature=0.7
     )
     return response.choices[0].message.content.strip()
