@@ -1,3 +1,2 @@
-speechrecognition
-pyaudio
-pyttsx3
+streamlit
+openai>=1.0.0

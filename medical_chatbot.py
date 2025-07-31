@@ -3,7 +3,7 @@ import openai
 import os
 
 # --- OpenAI API Key (store securely in Streamlit Secrets) ---
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = st.secrets["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"]
 
 # --- Function to query OpenAI ---
 def ask_openai(prompt):
