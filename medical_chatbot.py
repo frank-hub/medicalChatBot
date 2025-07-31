@@ -9,8 +9,10 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 def ask_openai(prompt):
     response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=300,
+        messages=[
+            {"role": "system", "content": "You are a helpful and knowledgeable medical assistant. Only answer health-related questions. If a question is not about medicine or health, politely refuse."},
+            {"role": "user", "content": user_input}
+        ]        max_tokens=300,
         temperature=0.7
     )
     return response.choices[0].message.content.strip()
